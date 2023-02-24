@@ -9,7 +9,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeProvider theme={color}>
     <GlobalStyle />
-    <GlobalFont />
     <Router />
   </ThemeProvider>
 );
