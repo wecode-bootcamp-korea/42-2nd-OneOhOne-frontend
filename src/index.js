@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
-import GlobalFont from "./styles/GlobalFont";
 import color from "./styles/theme";
 import Router from "./Router";
 
