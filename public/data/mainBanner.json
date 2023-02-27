@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "lectureId": 1,
+      "lectureMainImageUrl": "/images/html.jpg",
+      "lectureBannerTxt": "기초 부터 빡세게~ 빡 코딩~",
+      "lectureTxtDescription": "지금 당신에게 필요한건 빡 코딩"
+    },
+    {
+      "lectureId": 2,
+      "lectureMainImageUrl": "/images/golf.jpg",
+      "lectureBannerTxt": "내 취향을 담은 나만의 라이프 스타일",
+      "lectureTxtDescription": "당신의 취향 적중 맞춤 클래스"
+    }
+  ]
+}

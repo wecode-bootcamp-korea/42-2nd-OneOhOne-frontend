@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "lectureId": 1,
+      "lectureName": "강의 1",
+      "lecturePrice": "15000.00",
+      "lectureDescription": "description test 1",
+      "lectureMainImageUrl": "/images/cooking.jpg",
+      "creatorName": "크리에이터 1",
+      "categoryName": "cook",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:30:35.000Z"
+    },
+    {
+      "lectureId": 2,
+      "lectureName": "강의 2",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/golf.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z",
+      "lectureBannerTxT": "내 취향을 담은 나만의 라이프 스타일"
+    },
+    {
+      "lectureId": 3,
+      "lectureName": "강의 3",
+      "lecturePrice": "10000.00",
+      "lectureDescription": "description test 3",
+      "lectureMainImageUrl": "/images/react.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:31:43.000Z"
+    },
+    {
+      "lectureId": 4,
+      "lectureName": "강의 4",
+      "lecturePrice": "25000.00",
+      "lectureDescription": "description test 4",
+      "lectureMainImageUrl": "/images/html.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:32:21.000Z",
+      "lectureBannerTxT": "기초 부터 빡세게~ 빡 코딩~"
+    },
+    {
+      "lectureId": 5,
+      "lectureName": "강의 5",
+      "lecturePrice": "18000.200",
+      "lectureDescription": "description test 5",
+      "lectureMainImageUrl": "/images/foo1.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "cook",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:32:46.000Z"
+    },
+    {
+      "lectureId": 6,
+      "lectureName": "강의 6",
+      "lecturePrice": "15000.00",
+      "lectureDescription": "description test 1",
+      "lectureMainImageUrl": "/images/food2.jpg",
+      "creatorName": "크리에이터 1",
+      "categoryName": "cook",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:30:35.000Z"
+    },
+    {
+      "lectureId": 7,
+      "lectureName": "강의 7",
+      "lecturePrice": "15000.00",
+      "lectureDescription": "description test 1",
+      "lectureMainImageUrl": "/images/cooking2.jpg",
+      "creatorName": "크리에이터 1",
+      "categoryName": "cook",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:30:35.000Z"
+    },
+    {
+      "lectureId": 8,
+      "lectureName": "강의 8",
+      "lecturePrice": "15000.00",
+      "lectureDescription": "description test 1",
+      "lectureMainImageUrl": "/images/burger.jpg",
+      "creatorName": "크리에이터 1",
+      "categoryName": "cook",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:30:35.000Z"
+    },
+    {
+      "lectureId": 9,
+      "lectureName": "강의 9",
+      "lecturePrice": "15000.00",
+      "lectureDescription": "description test 1",
+      "lectureMainImageUrl": "/images/food3.jpg",
+      "creatorName": "크리에이터 1",
+      "categoryName": "cook",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:30:35.000Z"
+    },
+    {
+      "lectureId": 10,
+      "lectureName": "강의 10",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/swim.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z"
+    },
+    {
+      "lectureId": 11,
+      "lectureName": "강의 11",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/workout.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z"
+    },
+    {
+      "lectureId": 12,
+      "lectureName": "강의 12",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/groupExerc.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z"
+    },
+    {
+      "lectureId": 13,
+      "lectureName": "강의 13",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/hometraining.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z"
+    },
+    {
+      "lectureId": 14,
+      "lectureName": "강의 14",
+      "lecturePrice": "20000.00",
+      "lectureDescription": "description test 2",
+      "lectureMainImageUrl": "/images/yaga.jpg",
+      "creatorName": "크리에이터 2",
+      "categoryName": "exercise",
+      "lectureStatus": "오픈예정",
+      "lectureCreateAt": "2023-02-28T08:31:20.000Z"
+    },
+    {
+      "lectureId": 15,
+      "lectureName": "강의 15",
+      "lecturePrice": "10000.00",
+      "lectureDescription": "description test 3",
+      "lectureMainImageUrl": "/images/js.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:31:43.000Z"
+    },
+    {
+      "lectureId": 16,
+      "lectureName": "강의 16",
+      "lecturePrice": "10000.00",
+      "lectureDescription": "description test 3",
+      "lectureMainImageUrl": "/images/coding2.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:31:43.000Z"
+    },
+    {
+      "lectureId": 17,
+      "lectureName": "강의 17",
+      "lecturePrice": "10000.00",
+      "lectureDescription": "description test 3",
+      "lectureMainImageUrl": "/images/coding.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:31:43.000Z"
+    },
+    {
+      "lectureId": 18,
+      "lectureName": "강의 18",
+      "lecturePrice": "10000.00",
+      "lectureDescription": "description test 3",
+      "lectureMainImageUrl": "/images/code.jpg",
+      "creatorName": "크리에이터 3",
+      "categoryName": "programming",
+      "lectureStatus": "수강가능",
+      "lectureCreateAt": "2023-02-28T08:31:43.000Z"
+    }
+  ]
+}
