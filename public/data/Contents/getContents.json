@@ -1,0 +1,54 @@
+{
+  "lectureId": "1",
+  "lectureName": "강좌명",
+  "creatorName": "크리에이터",
+  "curriculum": [
+    {
+      "curriculumId": 1,
+      "chapterName": "챕터명1",
+      "video": [
+        {
+          "videoId": 1,
+          "name": "강의명1",
+          "src": "/videos/contents/contents_surfer.mp4"
+        },
+        {
+          "videoId": 2,
+          "name": "강의명2",
+          "src": "/videos/contents/foggy_forest.mp4"
+        },
+        {
+          "videoId": 3,
+          "name": "강의명3",
+          "src": "/videos/contents/pinetree.mp4"
+        }
+      ]
+    },
+    {
+      "curriculumId": 2,
+      "chapterName": "챕터명2",
+      "video": [
+        {
+          "videoId": 4,
+          "name": "강의명4",
+          "src": "/videos/contents/sunset_sea.mp4"
+        },
+        {
+          "videoId": 5,
+          "name": "강의명5",
+          "src": "/videos/contents/windpower_generator.mp4"
+        },
+        { "videoId": 6, "name": "강의명6", "src": "" }
+      ]
+    },
+    {
+      "curriculumId": 3,
+      "chapterName": "챕터명3",
+      "video": [
+        { "videoId": 7, "name": "강의명7", "src": "" },
+        { "videoId": 8, "name": "강의명8", "src": "" },
+        { "videoId": 9, "name": "강의명9", "src": "" }
+      ]
+    }
+  ]
+}
