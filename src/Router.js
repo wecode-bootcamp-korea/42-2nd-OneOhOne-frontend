@@ -7,6 +7,7 @@ import Detail from "./pages/Detail/Detail";
 import Contents from "./pages/Contents/Contents";
 import Host from "./pages/Host/Host";
 import Container from "./components/Container/Container";
+import KakaoLogin from "./pages/Login/KakaoLogin";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
           <Route path="/detail/:id" element={<Detail />} />
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/login/kakao" element={<KakaoLogin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contents" element={<Contents />} />
         <Route path="/contents/:videoId" element={<Contents />} />
