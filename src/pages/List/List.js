@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ListMainCarousel from "./ListMainCarousel";
 import { useNavigate } from "react-router-dom";
 import { carouselData } from "./CarouselData";
-import GET_PRODUCT_API from "../../config";
+import { GET_PRODUCT_API } from "../../config";
 import * as S from "./List.style";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
