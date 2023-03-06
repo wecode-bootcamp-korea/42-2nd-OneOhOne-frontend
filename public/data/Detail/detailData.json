@@ -1,0 +1,26 @@
+{
+  "class": [
+    {
+      "id": 1,
+      "className": "강좌명",
+      "creator": "강사 랄랄라",
+      "description": "강좌설명 bla bla bla",
+      "price": "199,000원",
+      "coverImage": "images/Detail/detail_thumbnail.png",
+      "category": "운동",
+      "status": "바로 수강 가능",
+      "curriculum": {
+        "chapterName": {
+          "welcome": "WELCOME 생애 마지막 다이어트 시작해보세요",
+          "chapter01": "01 운동 전 동기부여, 마음 다지기",
+          "chapter02": "02 평생 유지 가능한 이지 다이어트 식단"
+        },
+        "videoName": {
+          "video0": "진짜 몸이 변하는 클래스를 소개합니다.",
+          "video1": "우리가 다이어트를 해야하는 이유!",
+          "video2": "완벽하지 않아도 무조건 빠져! 식단 피라미드 우선순위"
+        }
+      }
+    }
+  ]
+}
