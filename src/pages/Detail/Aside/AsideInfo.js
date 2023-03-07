@@ -3,31 +3,33 @@ import * as S from "./AsideInfo.style";
 
 export const AsideInfo = () => {
   const [lecture, setLecture] = useState([]);
+  const [review, setReview] = useState([]);
+  const [like, setLike] = useState(0);
+
+  const rate = review.review?.map(rate => rate.reviewStar);
+
+  const avgStar = rate?.reduce((accumulator, current, index) => {
+    if (index === rate.length - 1) {
+      return ((accumulator + current) / rate.length).toFixed(1);
+    }
+    return accumulator + current;
+  }, 0);
+
+  const formatPrice = Math.floor(
+    Number(lecture?.lecturePrice)
+  ).toLocaleString();
 
   useEffect(() => {
     fetch("/data/Detail/getDetail.json")
       .then(res => res.json())
       .then(data => setLecture(data.data));
   }, []);
-  if (!lecture.lectureId) return null;
 
-  const star = lecture.review;
-
-  const reviewStar = [];
-  for (let data of star) {
-    reviewStar.push(data.reviewStar);
-  }
-
-  const avgStar = reviewStar.reduce((accumulator, current, index) => {
-    if (index === reviewStar.length - 1) {
-      return ((accumulator + current) / reviewStar.length).toFixed(1);
-    }
-    return accumulator + current;
-  }, 0);
-
-  const FormatPrice = Math.floor(lecture.lecturePrice)
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  useEffect(() => {
+    fetch("/data/Detail/getDetailMock.json")
+      .then(res => res.json())
+      .then(data => setReview(data.data));
+  }, []);
 
   return (
     <S.InfoContainer>
@@ -38,17 +40,29 @@ export const AsideInfo = () => {
           <div>{lecture.creatorName}</div>
         </S.Category>
         <S.Title>{lecture.lectureName}</S.Title>
-        <S.Status>{lecture.lectureStatus}</S.Status>
+        <S.Status>수강가능</S.Status>
         <S.PriceBox>
-          <S.Price>{FormatPrice}원</S.Price>/5개월 수강권
+          <S.Price>{formatPrice}원</S.Price>/5개월 수강권
         </S.PriceBox>
         <S.GradeBox>
-          <S.Icon alt="엄지척" src="images/Detail/Icon/thumbs-up-regular.png" />
+          <S.Icon
+            alt="엄지척"
+            src="/images/Detail/Icon/thumbs-up-regular.png"
+          />
           강의 만족도<S.Grade>{avgStar}/5점</S.Grade>
         </S.GradeBox>
         <S.IconButtons>
+          <S.IconButton
+            onClick={() => {
+              setLike(like + 1);
+            }}
+          >
+            <S.Icon alt="하트" src="/images/Detail/Icon/heart-regular.png" />
+            좋아요 {like}
+          </S.IconButton>
           {BUTTON_ICONS.map(icon => (
-            <S.IconButton key={icon.id} alt={icon.alt} src={icon.img}>
+            <S.IconButton key={icon.id}>
+              <S.Icon alt={icon.alt} src={icon.img} />
               {icon.text}
             </S.IconButton>
           ))}
@@ -69,20 +83,14 @@ export const AsideInfo = () => {
 const BUTTON_ICONS = [
   {
     id: 1,
-    alt: "하트",
-    img: "images/Detail/Icon/heart-regular.png",
-    text: "좋아요수",
-  },
-  {
-    id: 2,
     alt: "공유",
-    img: "images/Detail/Icon/arrow-up-from-bracket-solid.png",
+    img: "/images/Detail/Icon/arrow-up-from-bracket-solid.png",
     text: " 공유하기",
   },
   {
-    id: 3,
+    id: 2,
     alt: "선물",
-    img: "images/Detail/Icon/gift-solid.png",
+    img: "/images/Detail/Icon/gift-solid.png",
     text: "선물하기",
   },
 ];

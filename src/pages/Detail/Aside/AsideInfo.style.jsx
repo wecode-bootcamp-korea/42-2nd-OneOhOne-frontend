@@ -8,11 +8,12 @@ export const InfoContainer = styled.div`
 `;
 export const StickyBox = styled.div`
   border-radius: 20px;
+  margin-top: 20px;
   padding: 20px 20px 0px 20px;
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 50px;
+  top: 60px;
   border: 1px solid lightgray;
   box-shadow: -1px 1px 5px 0px lightgray;
   border-top: none;

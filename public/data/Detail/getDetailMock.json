@@ -1,0 +1,78 @@
+{
+  "data": {
+    "review": [
+      {
+        "reviewId": 1,
+        "lectureName": "강의 3",
+        "reviewUserId": 1,
+        "reviewUserName": "혜린",
+        "reviewDescription": "선생님이 정말 재밌고 쉽게 잘 가르쳐주시네요. 너무 힘들지만 그만큼 뿌듯합니다",
+        "reviewImageUrl": "https://cdn.pixabay.com/photo/2017/08/02/20/24/woman-2573216_1280.jpg",
+        "reviewStar": 5
+      },
+      {
+        "reviewId": 2,
+        "lectureName": "강의 3",
+        "reviewUserId": 2,
+        "reviewUserName": "유진",
+        "reviewDescription": "최고의 명강의입니다~",
+        "reviewImageUrl": "https://cdn.pixabay.com/photo/2018/01/09/16/08/jogger-3071964_1280.jpg",
+        "reviewStar": 4
+      },
+      {
+        "reviewId": 3,
+        "lectureName": "강의 3",
+        "reviewUserId": 3,
+        "reviewUserName": "준현",
+        "reviewDescription": "차근차근 따라하면 누구나 해낼 수 있게 도와주는 강의",
+        "reviewImageUrl": "https://cdn.pixabay.com/photo/2014/02/10/20/25/yoga-263673_1280.jpg",
+        "reviewStar": 5
+      },
+      {
+        "reviewId": 4,
+        "lectureName": "강의 3",
+        "reviewUserId": 4,
+        "reviewUserName": "홍열",
+        "reviewDescription": "재밌어요. 남는 시간에 취미 활동하려고 수강했는데 좋네요.",
+        "reviewImageUrl": "https://cdn.pixabay.com/photo/2017/08/31/08/48/young-woman-2699780_1280.jpg",
+        "reviewStar": 3
+      },
+      {
+        "reviewId": 5,
+        "lectureName": "강의 3",
+        "reviewUserId": 5,
+        "reviewUserName": "원경",
+        "reviewDescription": "한줄만 적기에는 할 말이 너무 많은 강의입니다. 최고예요!",
+        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
+        "reviewStar": 5
+      },
+      {
+        "reviewId": 1,
+        "lectureName": "강의 3",
+        "reviewUserId": 1,
+        "reviewUserName": "아무개",
+        "reviewDescription": "너무 너무 재미있어요.",
+        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
+        "reviewStar": 4
+      },
+      {
+        "reviewId": 1,
+        "lectureName": "강의 3",
+        "reviewUserId": 1,
+        "reviewUserName": "누구나",
+        "reviewDescription": "최고~",
+        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
+        "reviewStar": 5
+      },
+      {
+        "reviewId": 1,
+        "lectureName": "강의 3",
+        "reviewUserId": 1,
+        "reviewUserName": "이름없음",
+        "reviewDescription": "우리 아이가 잘 따라하네요.",
+        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
+        "reviewStar": 4
+      }
+    ]
+  }
+}

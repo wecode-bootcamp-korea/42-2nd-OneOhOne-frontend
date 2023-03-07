@@ -16,9 +16,14 @@ export const Player = ({ getPlayTime }) => {
       .then(data => setLectures(data.curriculum));
   }, []);
 
-  const videoSrc = lectures
-    .filter(list => list.curriculumId === Number(curriculumId))[0]
-    ?.video.filter(list => list.videoId === Number(videoId))[0]?.src;
+  // const videoSrc = lectures
+  //   .filter(list => list.curriculumId === Number(curriculumId))[0]
+  //   ?.video.filter(list => list.videoId === Number(videoId))[0]?.src;
+
+  const [videoSrc] = lectures.map(
+    chapter =>
+      chapter.video.filter(list => list.videoId === Number(videoId))[0]?.src
+  );
 
   return (
     <S.PlayerContainer>
