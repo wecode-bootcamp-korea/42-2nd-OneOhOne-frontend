@@ -7,7 +7,7 @@ export const Review = () => {
   const [star, setStar] = useState("");
 
   useEffect(() => {
-    fetch("/data/Detail/getDetail.json")
+    fetch("/data/Detail/getDetailMock.json")
       .then(res => res.json())
       .then(data => setStar(data.data.review));
   }, []);
@@ -41,7 +41,7 @@ export const Review = () => {
       <S.Subtitle>실제 수강생 후기</S.Subtitle>
       <S.RealReview>
         <S.StarBox>
-          <S.Star alt="별점" src="images/Detail/Icon/star-solid.png" />
+          <S.Star alt="별점" src="/images/Detail/Icon/star-solid.png" />
           <S.Grade>{avgStar}</S.Grade>
           <S.GradeNumber>총 {reviewStar.length}개</S.GradeNumber>
         </S.StarBox>

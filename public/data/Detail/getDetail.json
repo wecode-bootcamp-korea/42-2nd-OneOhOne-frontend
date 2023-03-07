@@ -1,129 +1,99 @@
 {
   "data": {
-    "lectureId": 4,
-    "lectureName": "운동효과가 눈으로 증명되는 랄랄라의 고강도 홈트레이닝",
-    "lecturePrice": "10000.00",
-    "lectureDescription": "description test 3",
-    "lectureMainImageUrl": "images/Detail/detail_thumbnail.png",
-    "creatorName": "크리에이터 3",
-    "creatorDescription": "test description 3",
-    "categoryName": "programming",
-    "lectureStatus": "수강가능",
+    "lectureId": 3,
+    "lectureName": "강의 2",
+    "lecturePrice": "20000.00",
+    "lectureDescription": "description test 2",
+    "lectureMainImageUrl": "image 2",
+    "creatorName": "크리에이터 2",
+    "creatorDescription": "test description 2",
+    "categoryName": "exercise",
+    "lectureStatus": "오픈예정",
     "detailImages": [
       {
-        "detailImageLectureId": 4,
+        "detailImageLectureId": 3,
         "detailImageSequence": 1,
-        "detailImageUrl": "images/Detail/detail_thumbnail0.jpg"
+        "detailImageUrl": "/images/Detail/detail_thumbnail0.jpg"
       },
       {
-        "detailImageLectureId": 4,
+        "detailImageLectureId": 3,
         "detailImageSequence": 2,
-        "detailImageUrl": "images/Detail/detail_thumbnail1.jpg"
+        "detailImageUrl": "/images/Detail/detail_thumbnail1.jpg"
       },
       {
-        "detailImageLectureId": 4,
+        "detailImageLectureId": 3,
         "detailImageSequence": 3,
-        "detailImageUrl": "images/Detail/detail_thumbnail3.jpg"
-      },
-      {
-        "detailImageLectureId": 4,
-        "detailImageSequence": 4,
-        "detailImageUrl": "images/Detail/detail_thumbnail2.jpg"
-      },
-      {
-        "detailImageLectureId": 4,
-        "detailImageSequence": 5,
-        "detailImageUrl": "images/Detail/detail_thumbnail1.jpg"
+        "detailImageUrl": "/images/Detail/detail_thumbnail2.jpg"
       }
     ],
     "curriculums": [
       {
-        "curriculumId": 12,
-        "curriculumChapterName": "WELCOME 클래스에 오신 여러분, 반가워요!",
-        "curriculumSequence": "1"
+        "curriculumId": 23,
+        "curriculumChapterName": "챕터 2-1",
+        "curriculumSequence": "1",
+        "videos": [
+          {
+            "videoId": 46,
+            "videoName": "video name2-1-1",
+            "videoSequence": 1,
+            "curriculumId": 23
+          },
+          {
+            "videoId": 47,
+            "videoName": "video name2-1-2",
+            "videoSequence": 2,
+            "curriculumId": 23
+          },
+          {
+            "videoId": 48,
+            "videoName": "video name2-1-3",
+            "videoSequence": 3,
+            "curriculumId": 23
+          },
+          {
+            "videoId": 49,
+            "videoName": "video name2-1-4",
+            "videoSequence": 4,
+            "curriculumId": 23
+          }
+        ]
       },
       {
-        "curriculumId": 13,
-        "curriculumChapterName": "01강",
-        "curriculumSequence": "2"
+        "curriculumId": 24,
+        "curriculumChapterName": "챕터 2-2",
+        "curriculumSequence": "2",
+        "videos": [
+          {
+            "videoId": 50,
+            "videoName": "video name2-2-1",
+            "videoSequence": 1,
+            "curriculumId": 24
+          },
+          {
+            "videoId": 51,
+            "videoName": "video name2-2-2",
+            "videoSequence": 2,
+            "curriculumId": 24
+          },
+          {
+            "videoId": 52,
+            "videoName": "video name2-2-3",
+            "videoSequence": 3,
+            "curriculumId": 24
+          },
+          {
+            "videoId": 53,
+            "videoName": "video name2-2-4",
+            "videoSequence": 4,
+            "curriculumId": 24
+          }
+        ]
       },
       {
-        "curriculumId": 14,
-        "curriculumChapterName": "02강",
-        "curriculumSequence": "3"
-      }
-    ],
-    "videos": [
-      {
-        "curriculumId": 12,
-        "videoId": 1,
-        "videoName": "클래스에 오신 것을 환영합니다.",
-        "videoUrl": "/videos/Detail/foggy_forest.mp4"
-      },
-      {
-        "curriculumId": 12,
-        "videoId": 2,
-        "videoName": "클래스에서 제작할 작품과 커리큘럼을 소개합니다.",
-        "videoUrl": "/videos/Detail/pinetree.mp4"
-      },
-      {
-        "curriculumId": 13,
-        "videoId": 3,
-        "videoName": "클래스 준비물을 알아볼까요?",
-        "videoUrl": "/videos/Detail/sunset_sea.mp4"
-      },
-      {
-        "curriculumId": 14,
-        "videoId": 4,
-        "videoName": "실습을 해봅시다.",
-        "videoUrl": "/videos/Detail/windpower_generator.mp4"
-      }
-    ],
-    "review": [
-      {
-        "reviewId": 10,
-        "lectureName": "강의 3",
-        "reviewUserId": 5,
-        "reviewUserName": "혜린",
-        "reviewDescription": "review desc 1",
-        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
-        "reviewStar": 5
-      },
-      {
-        "reviewId": 10,
-        "lectureName": "강의 3",
-        "reviewUserId": 5,
-        "reviewUserName": "유진",
-        "reviewDescription": "review desc 2",
-        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
-        "reviewStar": 4
-      },
-      {
-        "reviewId": 10,
-        "lectureName": "강의 3",
-        "reviewUserId": 5,
-        "reviewUserName": "준현",
-        "reviewDescription": "review desc 3",
-        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
-        "reviewStar": 3
-      },
-      {
-        "reviewId": 10,
-        "lectureName": "강의 3",
-        "reviewUserId": 5,
-        "reviewUserName": "홍열",
-        "reviewDescription": "review desc 4",
-        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
-        "reviewStar": 4
-      },
-      {
-        "reviewId": 10,
-        "lectureName": "강의 3",
-        "reviewUserId": 5,
-        "reviewUserName": "원경",
-        "reviewDescription": "review desc 5",
-        "reviewImageUrl": "/images/Detail/detail_review_sample.png",
-        "reviewStar": 5
+        "curriculumId": 25,
+        "curriculumChapterName": "챕터 2-3",
+        "curriculumSequence": "3",
+        "videos": []
       }
     ]
   }

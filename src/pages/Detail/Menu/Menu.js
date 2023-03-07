@@ -17,8 +17,9 @@ export const Menu = () => {
 };
 
 const CATEGORY_DATA = [
-  { id: 1, linkTo: 1, category: "후기" },
-  { id: 2, linkTo: 2, category: "클래스 소개" },
-  { id: 3, linkTo: 3, category: "커리큘럼" },
-  { id: 4, linkTo: 4, category: "크리에이터" },
+  { id: 1, linkTo: "1", category: "후기" },
+  { id: 2, linkTo: "2", category: "클래스 소개" },
+  { id: 3, linkTo: "3", category: "커리큘럼" },
+  { id: 4, linkTo: "4", category: "크리에이터" },
+  { id: 5, linkTo: "5", category: "환불정책" },
 ];
