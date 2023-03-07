@@ -12,7 +12,6 @@ export const ListMainImgH3 = styled.h3`
   display: flex;
   justify-content: center;
   background-color: black;
-  margin-top: 15px;
   height: 420px;
 `;
 
