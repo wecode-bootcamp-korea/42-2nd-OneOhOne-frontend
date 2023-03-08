@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "categoryTitle": "운동 & 건강 ",
+    "listTxt": "내 취향을 담은 나만의 라이프 스타일",
+    "carousel": [
+      { "id": 1, "listImg": "/images/golf.jpg" },
+      { "id": 2, "listImg": "/images/swim.jpg" },
+      { "id": 3, "listImg": "/images/workout.jpg" },
+      { "id": 4, "listImg": "/images/yaga.jpg" },
+      { "id": 5, "listImg": "/images/hometraining.jpg" },
+      { "id": 6, "listImg": "/images/groupExerc.jpg" }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryTitle": "음식 & 요리  ",
+    "listTxt": "내 취향을 담은 나만의 라이프 스타일",
+    "carousel": [
+      { "id": 1, "listImg": "/images/burger.jpg" },
+      { "id": 2, "listImg": "/images/cooking.jpg" },
+      { "id": 3, "listImg": "/images/cooking2.jpg" },
+      { "id": 4, "listImg": "/images/food2.jpg" },
+      { "id": 5, "listImg": "/images/foo1.jpg" },
+      { "id": 6, "listImg": "/images/food3.jpg" }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryTitle": "프로그래밍 ",
+    "listTxt": "내 취향을 담은 나만의 라이프 스타일",
+    "carousel": [
+      { "id": 1, "listImg": "/images/code.jpg" },
+      { "id": 2, "listImg": "/images/coding.jpg" },
+      { "id": 3, "listImg": "/images/coding2.jpg" },
+      { "id": 4, "listImg": "/images/html.jpg" },
+      { "id": 5, "listImg": "/images/js.jpg" },
+      { "id": 6, "listImg": "/images/react.jpg" }
+    ]
+  }
+]
