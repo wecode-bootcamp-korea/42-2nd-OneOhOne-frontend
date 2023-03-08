@@ -12,6 +12,7 @@ export const ListMainImgH3 = styled.h3`
   display: flex;
   justify-content: center;
   background-color: black;
+  margin-top: 89.5px;
   height: 420px;
 `;
 
@@ -33,7 +34,7 @@ export const ListBackImg = styled.img`
   position: absolute;
   width: 10%;
   height: 398px;
-  margin-top: 29px;
+  margin-top: 90px;
   margin-left: 15px;
   opacity: 0.7;
   filter: blur(13px);
