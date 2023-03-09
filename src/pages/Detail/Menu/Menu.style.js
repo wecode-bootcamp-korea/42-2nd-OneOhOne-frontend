@@ -9,6 +9,7 @@ export const MenuLayout = styled.div`
   height: 50px;
   color: gray;
   background-color: white;
+  z-index: 99;
 `;
 
 export const Categories = styled.div`

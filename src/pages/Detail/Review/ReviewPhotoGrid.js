@@ -5,7 +5,7 @@ export const ReviewPhotoGrid = () => {
   const [reviewPhoto, setReviewPhoto] = useState([]);
 
   useEffect(() => {
-    fetch("data/Detail/getDetail.json")
+    fetch("/data/Detail/getDetailMock.json")
       .then(res => res.json())
       .then(data => setReviewPhoto(data.data.review));
   }, []);

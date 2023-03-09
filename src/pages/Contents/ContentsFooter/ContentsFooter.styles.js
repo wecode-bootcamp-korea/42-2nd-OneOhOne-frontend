@@ -15,7 +15,8 @@ export const LectureButton = styled(Link)`
   height: 100%;
   width: 20%;
   font-size: 16px;
-  border: none;
+  border: 1px solid lightgray;
+  border-radius: 20px;
   background-color: transparent;
   &:visited {
     color: black;
@@ -23,6 +24,6 @@ export const LectureButton = styled(Link)`
   &:hover {
     cursor: pointer;
     transition: 0.3s;
-    color: lightgray;
+    background-color: lightgray;
   }
 `;

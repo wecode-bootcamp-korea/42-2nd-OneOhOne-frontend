@@ -3,9 +3,8 @@ import * as S from "./ReviewGrid.style";
 
 export const ReviewGrid = () => {
   const [review, setReview] = useState([]);
-
   useEffect(() => {
-    fetch("data/Detail/getDetail.json")
+    fetch("/data/Detail/getDetailMock.json")
       .then(res => res.json())
       .then(data => setReview(data.data.review));
   }, []);
@@ -19,7 +18,7 @@ export const ReviewGrid = () => {
           <S.GridContents>
             <S.ReviewImg
               alt='"'
-              src="images/Detail/Icon/quote-left-solid.png"
+              src="/images/Detail/Icon/quote-left-solid.png"
             />
             <S.ReviewBody>{data.reviewDescription}</S.ReviewBody>
             <S.ReviewWriter>{data.reviewUserName}</S.ReviewWriter>

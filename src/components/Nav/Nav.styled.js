@@ -9,6 +9,9 @@ const flexCenterMixin = css`
 export const NavBar = styled.nav`
   ${flexCenterMixin}
   width: 100%;
+  position: fixed;
+  z-index: 100;
+  background-color: white;
 `;
 
 export const NavMainDiv = styled.span`
@@ -23,13 +26,6 @@ export const NavTitleSpan = styled.span`
   font-size: 33px;
   font-weight: bold;
 `;
-
-export const NavCategorySpan = styled.span`
-  font-weight: bold;
-  font-size: 18px;
-  margin: 0 18px;
-`;
-
 export const NavInput = styled.input`
   width: 380px;
   height: 38px;
@@ -48,4 +44,40 @@ export const NavRightDiv = styled.div`
   justify-content: space-between;
   font-size: 15px;
   cursor: pointer;
+`;
+
+export const DropdownList = styled.ul`
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: -15%;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 250px;
+`;
+
+export const DropdownItem = styled.li`
+  padding: 8px 16px;
+  font-size: 17px;
+  line-height: 3;
+  color: #333;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5f5f5;
+  }
+`;
+
+export const NavCategorySpan = styled.span`
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 18px;
+  position: relative;
+  display: inline-block;
+
+  &:hover ul {
+    display: block;
+  }
 `;

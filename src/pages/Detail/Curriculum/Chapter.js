@@ -4,31 +4,38 @@ import * as S from "./Chapter.style";
 export const Chapter = () => {
   const [lecture, setLecture] = useState([]);
 
+  const curriculums = lecture.curriculums?.map(
+    ({ curriculumChapterName, curriculumId, videos }) => {
+      return { curriculumChapterName, curriculumId, videos };
+    }
+  );
+
   useEffect(() => {
     fetch("/data/Detail/getDetail.json")
       .then(res => res.json())
       .then(data => setLecture(data.data));
   }, []);
-  if (!lecture.lectureId) return null;
-
-  const curriculums = lecture.curriculums;
-  const videos = lecture.videos;
 
   return (
     <S.ChapterContainer>
-      <S.VideoImage alt="비디오" src="" />
       <S.ChapterInfo>
-        {curriculums.map(data => (
-          <S.ChapterBox key={data.curriculumId}>
-            <S.ChapterName>{data.curriculumChapterName}</S.ChapterName>
-          </S.ChapterBox>
-        ))}
-        {videos.map(data => (
-          <S.VideoName key={videos.videoId}>
-            {data.videoName}
-            <S.VideoButton>무료공개</S.VideoButton>
-          </S.VideoName>
-        ))}
+        {curriculums?.map(({ curriculumId, curriculumChapterName, videos }) => {
+          return (
+            <S.ChapterBox key={curriculumId}>
+              <S.ChapterName>
+                {curriculumChapterName}
+                {videos.map(({ videoId, videoName }) => {
+                  return (
+                    <S.VideoName key={videoId}>
+                      {videoName}
+                      <S.VideoButton>무료공개</S.VideoButton>
+                    </S.VideoName>
+                  );
+                })}
+              </S.ChapterName>
+            </S.ChapterBox>
+          );
+        })}
       </S.ChapterInfo>
     </S.ChapterContainer>
   );

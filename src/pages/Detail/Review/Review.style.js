@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DetailContainer = styled.div`
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 export const Title = styled.h1`
   margin-left: 30px;
