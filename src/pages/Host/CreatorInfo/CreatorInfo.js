@@ -55,7 +55,7 @@ function CreatorInfo() {
 
       <S.CreatorNameContainer>
         <S.CreatorNameTitle>크리에이터 닉네임</S.CreatorNameTitle>
-        <S.CreatorName>데이터</S.CreatorName>
+        <S.CreatorName>이유진</S.CreatorName>
         {/* <S.CreatorName>{creatorName}</S.CreatorName> */}
       </S.CreatorNameContainer>
 
