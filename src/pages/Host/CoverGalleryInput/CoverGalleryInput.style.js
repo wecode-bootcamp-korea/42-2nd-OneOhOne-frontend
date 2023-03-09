@@ -9,7 +9,7 @@ export const CoverGalleryWrapper = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-bottom: 20px;
 `;
@@ -118,7 +118,6 @@ export const BackBtn = styled.button`
     css`
       color: #b2b2b2;
     `}
-
   cursor: pointer;
 `;
 

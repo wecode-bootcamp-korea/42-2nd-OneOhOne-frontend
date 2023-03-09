@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   margin-left: 460px;
@@ -57,11 +57,26 @@ export const Category = styled.div`
   margin-top: 40px;
 `;
 
+// export const BasicInfo = styled.h2`
+//   font-size: 20px;
+//   font-weight: bold;
+//   padding-bottom: 10px;
+//   border-bottom: ${(({ basicInfoClicked, curriculumClicked }) =>
+//     basicInfoClicked ? "3.1px solid black" : "none",
+//   curriculumClicked ? "none" : "3.1px solid black")};
+//   cursor: pointer;
+// `;
+
 export const BasicInfo = styled.h2`
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 10px;
-  border-bottom: 3.1px solid black;
+  border-bottom: ${({ basicInfoClicked, curriculumClicked }) =>
+    basicInfoClicked
+      ? "3.1px solid black"
+      : curriculumClicked
+      ? "none"
+      : "3.1px solid black"};
   cursor: pointer;
 `;
 
@@ -75,21 +90,6 @@ export const Curriculum = styled.h2`
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  border-bottom: ${({ curriculumClicked }) =>
+    curriculumClicked ? "3.1px solid black" : "none"};
 `;
-
-// export const ClassContainer = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   width: 90%;
-//   margin-left: 100px;
-//   overflow: hidden;
-// `;
-
-// export const ClassSection = styled.div`
-//   flex: 1;
-//   margin-right: 30px;
-// `;
-
-// export const ProductSection = styled.div`
-//   width: 520px;
-// `;

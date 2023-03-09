@@ -32,7 +32,7 @@ const Button = ({
           <ToastContainer
             position="top-center"
             hideProgressBar="true"
-            autoClose="1000"
+            autoClose="1500"
           />
         </S.SubmitBtn>
       </S.BtnContainer>

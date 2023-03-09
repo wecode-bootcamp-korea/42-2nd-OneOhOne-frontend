@@ -1,25 +1,40 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import * as S from "./ClassTitleInput.style";
 
-function ClassTitleInput({ handleChange, handleShowNewCompTrue, inputValue }) {
+function ClassTitleInput({
+  handleChange,
+  handleShowNewCompTrue,
+  inputValue,
+  setVisible,
+}) {
   const [isActive, setIsActive] = useState(false);
+
+  const notify = () => toast.success("성공적으로 저장되었습니다.");
 
   const handleClick = () => {
     handleShowNewCompTrue();
     setIsActive(true);
 
-    fetch("API", {
+    const formData = new FormData();
+    formData.append("lectureName", inputValue);
+
+    axios({
+      baseURL: "http://localhost:8080",
+      url: "/upload",
       method: "POST",
+      data: formData,
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+        "Content-Type": "multipart/form-data",
       },
-      body: JSON.stringify({
-        //
-      }),
     })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res.data);
+      .then(response => {
+        console.log(response.data);
+        // notify();
+      })
+      .catch(error => {
+        console.error(error);
       });
   };
 
@@ -31,7 +46,6 @@ function ClassTitleInput({ handleChange, handleShowNewCompTrue, inputValue }) {
       setIsActive(true);
     }
   };
-
   return (
     <S.ClassTitleWrapper isActive={isActive}>
       <S.RecommendTitleContainer>
@@ -49,12 +63,20 @@ function ClassTitleInput({ handleChange, handleShowNewCompTrue, inputValue }) {
         onChange={handleChange}
         placeholder="제목을 입력해주세요."
       />
+
       <S.BtnSection>
         <S.BtnContainer>
           <S.BackBtn onClick={handleCancel} isActive={isActive}>
             취소하기
           </S.BackBtn>
-          <S.SubmitBtn onClick={handleClick}>저장하기</S.SubmitBtn>
+          <S.SubmitBtn
+            onClick={() => {
+              handleClick();
+              notify();
+            }}
+          >
+            저장하기
+          </S.SubmitBtn>
         </S.BtnContainer>
       </S.BtnSection>
     </S.ClassTitleWrapper>

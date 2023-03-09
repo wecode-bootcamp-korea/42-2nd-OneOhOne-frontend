@@ -4,34 +4,49 @@ import { useState, useRef } from "react";
 import { toast } from "react-toastify";
 import { useConfirm } from "../../../utils.js/useConfirm";
 import Button from "../components/Button";
+import Curriculum from "../Curriculum/Curriculum";
 import * as S from "./CurriculumSection.style";
 
-function CurriculumSection() {
-  const inputRef = useRef(null);
+const initialCurriculum = {
+  id: 1,
+  chapter: "",
+  video1: "",
+  video2: "",
+  title1: "",
+  title2: "",
+};
+
+function CurriculumSection({ chapter }) {
   const [isActive, setIsActive] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+
   const [videoBoxList, setVideoBoxList] = useState([]);
+  const [curriculums, setCurriculums] = useState([initialCurriculum]);
+  console.log(curriculums);
   const notify = () => toast.success("성공적으로 저장되었습니다.");
 
-  const onUploadImgBtnClick = () => {
-    if (!inputRef.current) {
-      return;
-    }
-    inputRef.current.click();
+  const nextCurriculumId = useRef(2);
+
+  const onUploadVideo = e => {};
+
+  const curriculumAdd = () => {
+    setCurriculums([
+      ...curriculums,
+      { ...initialCurriculum, id: nextCurriculumId.current },
+    ]);
+    nextCurriculumId.current += 1;
   };
 
-  const onUploadImg = e => {
-    if (!e.target.files) {
-      return;
-    }
-    const video = e.target.files[0];
-    setSelectedVideo(URL.createObjectURL(video));
+  const handleCurriculumChange = (targetId, objKey, value) => {
+    setCurriculums(
+      curriculums.map(curriculum =>
+        curriculum.id === targetId
+          ? { ...curriculum, [objKey]: value }
+          : curriculum
+      )
+    );
   };
-
-  const chapterAdd = () => {};
 
   const deleteWord = () => {
-    //setVisible();
     return;
   };
   const abortWord = () => {
@@ -46,9 +61,24 @@ function CurriculumSection() {
 
   const onSaveBtnClick = () => {
     const formData = new FormData();
-    videoBoxList.forEach(video => {
-      formData.append("detailImagesUrl", videoBoxList);
+    curriculums.forEach(({ video1, video2, title1, title2 }) => {
+      if (video1 !== "") {
+        formData.append("videoUrl", video1);
+      }
+
+      if (video2 !== "") {
+        formData.append("videoUrl", video2);
+      }
+
+      if (title2 !== "") {
+        formData.append("curriculumChapterName", title1);
+      }
+
+      if (title2 !== "") {
+        formData.append("curriculumChapterName", title2);
+      }
     });
+    formData.append("curriculumChapterName", { chapter });
 
     axios({
       baseURL: "http://localhost:8080",
@@ -69,43 +99,15 @@ function CurriculumSection() {
 
   return (
     <>
-      <S.CurriculumContainer>
-        <S.Curriculum>커리큘럼</S.Curriculum>
-        <S.ChapterInput
-          type="text"
-          // value={inputValue}
-          // onChange={priceHandleChange}
-          placeholder="제목을 입력해주세요."
+      {curriculums.map(curriculum => (
+        <Curriculum
+          key={curriculum.id}
+          id={curriculum.id}
+          curriculum={curriculum}
+          handleCurriculumChange={handleCurriculumChange}
         />
-
-        <S.VideoAddContainer onClick={onUploadImgBtnClick}>
-          <S.VideoAddText>강의 1 영상을 첨부해주세요.</S.VideoAddText>
-          <S.VideoAddBtn
-            multiple={false}
-            type="file"
-            accept="video/*"
-            ref={inputRef}
-            onChange={onUploadImg}
-          />
-        </S.VideoAddContainer>
-        <S.VideoAddContainer onClick={onUploadImgBtnClick}>
-          <S.VideoAddText>강의 2 영상을 첨부해주세요.</S.VideoAddText>
-          <S.VideoAddBtn
-            multiple={false}
-            type="file"
-            accept="video/*"
-            ref={inputRef}
-            onChange={onUploadImg}
-          />
-        </S.VideoAddContainer>
-
-        <S.TitleAddText>강의 1 제목을 입력해주세요.</S.TitleAddText>
-        <S.TitleAddText>강의 2 제목을 입력해주세요.</S.TitleAddText>
-
-        {selectedVideo && <div>선택된 파일 : {selectedVideo.name}</div>}
-      </S.CurriculumContainer>
-
-      <S.CoverAddBtnContainer onClick={chapterAdd}>
+      ))}
+      <S.CoverAddBtnContainer onClick={curriculumAdd}>
         <S.AddBtnSection>
           <S.CoverAddBtn
             src="https://cdn-icons-png.flaticon.com/128/2997/2997933.png"
@@ -115,14 +117,14 @@ function CurriculumSection() {
         </S.AddBtnSection>
       </S.CoverAddBtnContainer>
 
-      <Button
+      {/* <Button
         setIsActive={setIsActive}
         confirmDelete={confirmDelete}
         isActive={isActive}
         onSaveBtnClick={onSaveBtnClick}
         notify={notify}
-        style={{ width: "auto" }}
-      />
+        style={{ width: "300px" }}
+      /> */}
     </>
   );
 }

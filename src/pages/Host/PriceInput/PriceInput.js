@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import * as S from "./PriceInput.style";
 
-function PriceInput({ handleChange, handleShowNewCompTrue, inputValue }) {
+function PriceInput({ handleChange, handleShowNewCompTrue, priceInputValue }) {
   const [isActive, setIsActive] = useState(false);
 
   const priceHandleClick = () => {
-    pricehandleShowNewCompTrue();
+    // pricehandleShowNewCompTrue();
     setIsActive(true);
 
     fetch("API", {
@@ -33,11 +33,11 @@ function PriceInput({ handleChange, handleShowNewCompTrue, inputValue }) {
   };
 
   return (
-    <S.ClassTitleWrapper isActive={isActive}>
-      <S.TitleInput
+    <S.PriceWrapper isActive={isActive}>
+      <S.PriceInput
         type="text"
-        value={inputValue}
-        onChange={priceHandleChange}
+        value={priceInputValue}
+        // onChange={priceHandleChange}
         placeholder="제목을 입력해주세요."
       />
       <S.BtnSection>
@@ -48,7 +48,7 @@ function PriceInput({ handleChange, handleShowNewCompTrue, inputValue }) {
           <S.SubmitBtn onClick={priceHandleClick}>저장하기</S.SubmitBtn>
         </S.BtnContainer>
       </S.BtnSection>
-    </S.ClassTitleWrapper>
+    </S.PriceWrapper>
   );
 }
 

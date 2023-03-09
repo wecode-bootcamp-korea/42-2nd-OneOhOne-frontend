@@ -168,6 +168,7 @@ export const NewPrice = styled.div`
 export const PriceAdd = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 35px;
 `;
 
 export const NewPriceWrapper = styled.div`
@@ -182,7 +183,12 @@ export const PriceDescriptionDefault = styled.p`
 
 export const PriceContainer = styled.div`
   padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
 `;
+
 export const PriceDetailContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -192,6 +198,14 @@ export const PriceDetailContainer = styled.div`
 
 export const PriceInput = styled.div`
   color: #929292;
+`;
+
+export const PriceInputBox = styled.input`
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  padding: 15px 0px 15px 20px;
+  font-size: 15px;
+  width: 100%;
 `;
 
 export const CategoryContainer = styled.div`

@@ -6,17 +6,24 @@ import Button from "../components/Button";
 import * as S from "./CoverImgInput.style";
 import { useConfirm } from "../../../utils.js/useConfirm";
 
-function CoverImgInput({ setVisible, setDisplayImgAddTitleInput }) {
+function CoverImgInput({
+  selectedCoverImg,
+  setSelectedCoverImg,
+  visible,
+  setVisible,
+  setDisplayImgAddTitleInput,
+  onUploadImg,
+}) {
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
-  const [selectedCoverImg, setSelectedCoverImg] = useState(null);
+
   const [displayCoverImgContainer, setDisplayCoverImgContainer] =
     useState("flex");
   const [imgSave, setImgSave] = useState(false);
 
   const notify = () => toast.success("성공적으로 저장되었습니다.");
   const deleteWord = () => {
-    setVisible();
+    setVisible(false);
   };
   const abortWord = () => {
     return;
@@ -32,14 +39,6 @@ function CoverImgInput({ setVisible, setDisplayImgAddTitleInput }) {
       return;
     }
     inputRef.current.click();
-  };
-
-  const onUploadImg = e => {
-    if (!e.target.files) {
-      return;
-    }
-    const image = e.target.files[0];
-    setSelectedCoverImg(URL.createObjectURL(image));
   };
 
   const onSaveBtnClick = () => {
@@ -63,12 +62,11 @@ function CoverImgInput({ setVisible, setDisplayImgAddTitleInput }) {
         console.error(error);
       });
 
-    setDisplayCoverImgContainer("none");
-    setDisplayImgAddTitleInput("none");
+    setVisible(false);
   };
 
   return (
-    <S.CoverImgContainer style={{ display: displayCoverImgContainer }}>
+    <S.CoverImgContainer visible={visible}>
       <S.CoverImgDescription>
         커버 이미지는 홈페이지의 메인 페이지에서 보이는 썸네일 이미지입니다.
         크리에이터님과 작품을 잘 대표하는 사진일수록 좋습니다.
@@ -123,6 +121,7 @@ function CoverImgInput({ setVisible, setDisplayImgAddTitleInput }) {
           />
         </S.ImgAddContainer>
       )}
+
       <Button
         setIsActive={setIsActive}
         confirmDelete={confirmDelete}

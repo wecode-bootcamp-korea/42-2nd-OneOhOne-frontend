@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ClassTitleWrapper = styled.div`
+export const PriceWrapper = styled.div`
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@ export const ClassTitleWrapper = styled.div`
   display: ${({ isActive }) => (isActive ? "none" : "flex")};
 `;
 
-export const TitleInput = styled.input`
+export const PriceInput = styled.input`
   border: 1px solid #c9c9c9;
   border-radius: 3px;
   padding: 15px 0px 15px 20px;

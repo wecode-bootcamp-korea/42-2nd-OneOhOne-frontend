@@ -5,7 +5,7 @@ import ClassTitleInput from "../ClassTitleInput/ClassTitleInput";
 import CategoryList from "../CategoryList/CategoryList";
 import * as S from "./ClassBasicInfo.style";
 
-function ClassBasicInfo({ selectedCoverImg }) {
+function ClassBasicInfo() {
   const [visible, setVisible] = useState(false);
   const [colorChange, setColorChange] = useState(false);
   const [categoryColorChange, setCategoryColorChange] = useState(false);
@@ -14,14 +14,28 @@ function ClassBasicInfo({ selectedCoverImg }) {
   const [titleVisible, setTitleVisible] = useState(false);
   const [categoryVisible, setCategoryVisible] = useState(false);
   const [priceVisible, setPriceVisible] = useState(false);
+  const [selectedCoverImg, setSelectedCoverImg] = useState(false);
 
   const [inputValue, setInputValue] = useState("");
+  const [priceInputValue, setPriceInputValue] = useState("");
   const [showNewComponent, setShowNewComponent] = useState(false);
 
   const [showNewPrice, setShowNewPrice] = useState(false);
 
   const [displayImgAddTitleInput, setDisplayImgAddTitleInput] =
     useState("block");
+
+  const [selectedCoverGallery, setSelectedCoverGallery] = useState([]);
+
+  // [{src: null}, {src: null}]
+
+  const onUploadImg = e => {
+    if (!e.target.files) {
+      return;
+    }
+    const image = e.target.files[0];
+    setSelectedCoverImg(URL.createObjectURL(image));
+  };
 
   const handleChange = e => {
     setInputValue(e.target.value);
@@ -33,13 +47,40 @@ function ClassBasicInfo({ selectedCoverImg }) {
   };
 
   const priceHandleChange = e => {
-    setInputValue(e.target.value);
+    setPriceInputValue(e.target.value);
     setShowNewPrice(false);
   };
 
   const handleShowNewPrice = () => {
     setShowNewPrice(true);
   };
+
+  // const onSaveBtnClick = () => {
+  //   const formData = new FormData();
+  //   formData.append("lectureMainImageUrl", selectedCoverImg);
+  //   formData.append("detailImagesUrl", selectedCoveGallery);
+  //   formData.append("lectureName");
+  //   formData.append("categoryName", selectedCoverImg);
+  //   formData.append("lectureMainImageUrl", selectedCoverImg);
+
+  //   axios({
+  //     baseURL: "http://localhost:8080",
+  //     url: "/upload",
+  //     method: "POST",
+  //     data: formData,
+  //     headers: {
+  //       "Content-Type": "multipart/form-data",
+  //     },
+  //   })
+  //     .then(response => {
+  //       console.log(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+
+  //   setVisible(false);
+  // };
 
   return (
     <S.BasicInfoContainer>
@@ -48,6 +89,9 @@ function ClassBasicInfo({ selectedCoverImg }) {
         <S.CoverImgText>커버 이미지</S.CoverImgText>
         <S.Required>필수</S.Required>
       </S.CoverImgContainer>
+      {displayImgAddTitleInput === "none" && selectedCoverImg != null && (
+        <img src={selectedCoverImg} alt="커버 이미지" />
+      )}
 
       <S.CoverImgAddContainer>
         <S.CoverImgAdd>
@@ -76,10 +120,12 @@ function ClassBasicInfo({ selectedCoverImg }) {
 
         {visible && (
           <CoverImgInput
-            setVisible={() => {
-              setVisible(false);
-            }}
+            selectedCoverImg={selectedCoverImg}
+            setSelectedCoverImg={setSelectedCoverImg}
+            visible={visible}
+            setVisible={setVisible}
             setDisplayImgAddTitleInput={setDisplayImgAddTitleInput}
+            onUploadImg={onUploadImg}
           />
         )}
       </S.CoverImgAddContainer>
@@ -115,6 +161,8 @@ function ClassBasicInfo({ selectedCoverImg }) {
 
           {galleryVisible && (
             <CoverGalleryInput
+              selectedCoverGallery={selectedCoverGallery}
+              setSelectedCoverGallery={setSelectedCoverGallery}
               setVisible={() => {
                 setGalleryVisible(false);
               }}
@@ -174,27 +222,26 @@ function ClassBasicInfo({ selectedCoverImg }) {
 
       <S.PriceContainer>
         <S.ClassTitle>수강료</S.ClassTitle>
-
         <S.PriceAddContainer>
           <S.PriceAdd>
-            {showNewComponent && (
+            {showNewPrice && (
               <S.NewPriceWrapper>
-                <S.NewPrice>{inputValue}</S.NewPrice>
+                <S.NewPrice>{priceInputValue}</S.NewPrice>
                 <S.EditIcon src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png" />
               </S.NewPriceWrapper>
             )}
-            {!showNewComponent &&
+            {!showNewPrice &&
               (priceColorChange ? (
-                <S.PriceDescription>수강료를 작성해주세요.</S.PriceDescription>
+                <S.PriceDescription>수강료를 입력해주세요.</S.PriceDescription>
               ) : (
                 <S.PriceDescriptionDefault>
-                  수강료를 작성해주세요.
+                  수강료를 입력해주세요.
                 </S.PriceDescriptionDefault>
               ))}
 
             <S.CoverImgEditButton
               onClick={() => {
-                setTitleVisible(!priceVisible);
+                setPriceVisible(!priceVisible);
                 setPriceColorChange(!priceColorChange);
               }}
             >
@@ -207,21 +254,15 @@ function ClassBasicInfo({ selectedCoverImg }) {
           </S.PriceAdd>
 
           {priceVisible && (
-            <ClassTitleInput
-              priceHandleChange={priceHandleChange}
-              handleShowNewPrice={handleShowNewPrice}
-              inputValue={inputValue}
+            <S.PriceInputBox
+              type="text"
+              handleChange={priceHandleChange}
+              value={priceInputValue}
+              onChange={priceHandleChange}
+              placeholder="수강료를 입력해주세요."
             />
           )}
         </S.PriceAddContainer>
-      </S.PriceContainer>
-
-      <S.PriceContainer>
-        <S.Price>수강료</S.Price>
-        <S.PriceDetailContainer>
-          <S.PriceInput>수강료를 작성해주세요.</S.PriceInput>
-          <S.EditIcon src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png" />
-        </S.PriceDetailContainer>
       </S.PriceContainer>
 
       <S.CategoryContainer>

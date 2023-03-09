@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { toast } from "react-toastify";
@@ -10,6 +10,8 @@ function CreatorInfo() {
   const [isActive, setIsActive] = useState(false);
   const [colorChange, setColorChange] = useState(false);
   const [creatorInfoVisible, setCreatorInfoVisible] = useState(false);
+  const [creatorInfo, setCreatorInfo] = useState("");
+  const [creatorName, setCreatorName] = useState("");
   const notify = () => toast.success("성공적으로 저장되었습니다.");
 
   const deleteWord = () => {
@@ -26,6 +28,21 @@ function CreatorInfo() {
     abortWord
   );
 
+  const creatorInfoHandleChange = e => {
+    setCreatorInfo(e.target.value);
+  };
+
+  useEffect(() => {
+    fetch("API", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    })
+      .then(res => res.json())
+      .then(data => setCreatorName(data));
+  }, []);
+
   return (
     <S.CreatorInfoContainer>
       <S.CreatorIntoTtitle>크리에이터 기본 정보</S.CreatorIntoTtitle>
@@ -37,8 +54,9 @@ function CreatorInfo() {
       </S.ProfileImgContainer>
 
       <S.CreatorNameContainer>
-        <S.CreatorNameTitle>크리에이터 이름</S.CreatorNameTitle>
+        <S.CreatorNameTitle>크리에이터 닉네임</S.CreatorNameTitle>
         <S.CreatorName>데이터</S.CreatorName>
+        {/* <S.CreatorName>{creatorName}</S.CreatorName> */}
       </S.CreatorNameContainer>
 
       <S.CreatorIntroduceContainer>
@@ -73,6 +91,8 @@ function CreatorInfo() {
             <div>
               <S.CreatorIntroduce>
                 <ReactQuill
+                  onchange={creatorInfoHandleChange}
+                  value={creatorInfo}
                   setCreatorInfoVisible={() => {
                     setCreatorInfoVisible(false);
                   }}

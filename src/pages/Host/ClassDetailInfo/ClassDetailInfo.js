@@ -102,6 +102,7 @@ function ClassDetailInfo({ setVisible }) {
                 setClassDetailVisible={() => {
                   setClassDetailVisible(false);
                 }}
+                style={{ height: "400px", marginBottom: "55px" }}
               />
             </S.ClassIntroduce>
             <Button

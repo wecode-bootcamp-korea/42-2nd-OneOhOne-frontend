@@ -6,10 +6,15 @@ import Button from "../components/Button";
 import axios from "axios";
 import * as S from "./CoverGalleryInput.style";
 
-function CoverGalleryInput({ setVisible }) {
+function CoverGalleryInput({
+  selectedCoverGallery,
+  setSelectedCoverGallery,
+  setVisible,
+}) {
   const inputRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const [selectedCoverGallery, setSelectedCoverGallery] = useState(null);
+  // const [selectedGallery, setSelectedCoverGallery] = useState(null);
+  // const [selectedCoverImg, setSelectedCoverImg] = useState(null);
   const [imgBoxList, setImgBoxList] = useState([]);
   const notify = () => toast.success("성공적으로 저장되었습니다.");
 
@@ -20,18 +25,19 @@ function CoverGalleryInput({ setVisible }) {
     inputRef.current.click();
   };
 
-  const onUploadImg = e => {
-    if (!e.target.files) {
-      return;
-    }
-    const image = e.target.files[0];
-    setSelectedCoverGallery(URL.createObjectURL(image));
-  };
+  console.log(selectedCoverGallery);
+  // const onUploadImg = e => {
+  //   if (!e.target.files) {
+  //     return;
+  //   }
+  //   const image = e.target.files[0];
+  //   setSelectedCoverGallery(URL.createObjectURL(image));
+  // };
 
   const onSaveBtnClick = () => {
     const formData = new FormData();
     imgBoxList.forEach(image => {
-      formData.append("detailImagesUrl", imgBoxList);
+      formData.append("detailImagesUrl", image);
     });
 
     axios({
@@ -52,7 +58,7 @@ function CoverGalleryInput({ setVisible }) {
   };
 
   const addImageBox = () => {
-    setImgBoxList(prev => [...prev, selectedCoverGallery]);
+    setSelectedCoverGallery(prev => [...prev, []]);
   };
 
   const deleteWord = () => {
@@ -81,9 +87,14 @@ function CoverGalleryInput({ setVisible }) {
         </S.RecommendImgDetail>
       </S.RecommendImgContainer>
       <S.Grid>
-        {imgBoxList.map((_, index) => (
+        {selectedCoverGallery.map((file, index) => (
           <S.CoverGalleryImgWrapper key={index} gridColumn={(index % 3) + 1}>
-            <CoverGalleryImg />
+            <CoverGalleryImg
+              file={file}
+              index={index}
+              selectedCoverGallery={selectedCoverGallery}
+              setSelectedCoverGallery={setSelectedCoverGallery}
+            />
           </S.CoverGalleryImgWrapper>
         ))}
       </S.Grid>
