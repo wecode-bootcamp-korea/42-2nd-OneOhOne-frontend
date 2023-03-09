@@ -81,3 +81,11 @@ export const NavCategorySpan = styled.span`
     display: block;
   }
 `;
+
+export const LoginImg = styled.img`
+  width: 28px;
+  display: flex;
+  position: absolute;
+  margin-left: 140px;
+  margin-top: -5px;
+`;
