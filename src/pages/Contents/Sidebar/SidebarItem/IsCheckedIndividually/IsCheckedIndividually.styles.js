@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export const IndividualItem = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 export const LectureWrapper = styled(Link)`
-  width: 250px;
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
   &:visited {
     color: black;
@@ -24,7 +24,7 @@ export const LectureItem = styled(Link)`
   text-decoration: none;
   letter-spacing: 0.5px;
   color: gray;
-  max-width: 45%;
+  /* max-width: 45%; */
   &:hover {
     color: black;
   }

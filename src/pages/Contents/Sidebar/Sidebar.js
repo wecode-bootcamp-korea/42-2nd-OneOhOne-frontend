@@ -9,7 +9,7 @@ export const Sidebar = ({ isChecked }) => {
   };
 
   return (
-    <S.SidebarContainer>
+    <S.SidebarContainer isOpen={isOpen}>
       <S.SidebarMenuIcon>
         <S.SidebarToggle
           onClick={toggleSidebar}
