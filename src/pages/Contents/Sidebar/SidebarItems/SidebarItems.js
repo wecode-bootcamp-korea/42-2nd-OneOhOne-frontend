@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarItem from "../SidebarItem/SidebarItem";
 import * as S from "./SidebarItems.styles";
 
-export const SidebarItems = ({ isOpen, isChecked }) => {
-  const [lectures, setLectures] = useState([]);
+export const SidebarItems = ({ isOpen, isChecked, lectures, params }) => {
+  const [mockLectures, setMockLectures] = useState([]);
 
   useEffect(() => {
     fetch("/data/Contents/getContents.json")
       .then(res => res.json())
-      .then(data => setLectures(data.curriculum));
+      .then(data => setMockLectures(data.curriculum));
   }, []);
 
   return (
     <S.SidebarMenuItem isopen={isOpen}>
-      {lectures.map(lecture => {
+      {mockLectures.map(lectures => {
         return (
-          <SidebarItem key={lecture.id} {...lecture} isChecked={isChecked} />
+          <SidebarItem
+            params={params}
+            key={lectures.id}
+            {...lectures}
+            isChecked={isChecked}
+          />
         );
       })}
     </S.SidebarMenuItem>

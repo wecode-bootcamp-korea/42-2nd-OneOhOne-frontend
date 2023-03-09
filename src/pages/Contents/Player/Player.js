@@ -1,41 +1,47 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
-import { useParams } from "react-router-dom";
 import { ContentsFooter } from "../ContentsFooter/ContentsFooter";
 import { ContentsNav } from "../ContentsNav/ContentsNav";
 import * as S from "./Player.styles";
 
-export const Player = ({ getPlayTime }) => {
-  const [lectures, setLectures] = useState([]);
-  const params = useParams();
+export const Player = ({ getPlayTime, lectures, params }) => {
   const { curriculumId, videoId } = params;
+  const [lecture, setLectures] = useState([]);
+  const [getUrl, setGetUrl] = useState("");
+  // console.log(videoId);
 
+  // Mock-data 연결 시
   useEffect(() => {
     fetch("/data/Contents/getContents.json")
       .then(res => res.json())
       .then(data => setLectures(data.curriculum));
   }, []);
 
-  // const videoSrc = lectures
-  //   .filter(list => list.curriculumId === Number(curriculumId))[0]
-  //   ?.video.filter(list => list.videoId === Number(videoId))[0]?.src;
+  // API 연결 시
+  // useEffect(() => {
+  //   fetch(`http://10.58.52.60:8000/videos/${params.videoId}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json;charset=utf-8",
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => setGetUrl(data.data));
+  // }, [params.videoId]);
 
-  const [videoSrc] = lectures.map(
-    chapter =>
-      chapter.video.filter(list => list.videoId === Number(videoId))[0]?.src
-  );
+  // const videoSrc = getUrl[0]?.videoUrl;
 
   return (
     <S.PlayerContainer>
-      <ContentsNav />
+      <ContentsNav videoId={videoId} lectures={lectures} />
       <ReactPlayer
-        url={videoSrc}
+        url="/videos/contents/contents_surfer.mp4"
         width="100%"
         height="85vh"
         controls={true}
         onProgress={getPlayTime}
       />
-      <ContentsFooter curriculumId={curriculumId} videoId={videoId} />
+      <ContentsFooter videoId={videoId} />
     </S.PlayerContainer>
   );
 };

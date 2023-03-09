@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./ContentsFooter.styles";
 
-export const ContentsFooter = ({ curriculumId, videoId }) => {
+export const ContentsFooter = ({ videoId }) => {
   return (
     <S.FooterContainer>
       <S.LectureButton to={`/contents/${Number(videoId) - 1}`}>

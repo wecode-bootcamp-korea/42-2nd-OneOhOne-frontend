@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SidebarItems } from "./SidebarItems/SidebarItems";
 import * as S from "./Sidebar.styles";
 
-export const Sidebar = ({ isChecked }) => {
+export const Sidebar = ({ isChecked, lectures, params }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(prev => !prev);
@@ -28,6 +28,8 @@ export const Sidebar = ({ isChecked }) => {
           <S.SidebarMenuIndex isOpen={isOpen}>목차</S.SidebarMenuIndex>
           <S.LectureName isOpen={isOpen}>강좌명</S.LectureName>
           <SidebarItems
+            lectures={lectures}
+            params={params}
             isOpen={isOpen}
             isChecked={isChecked}
             toggleSidebar={toggleSidebar}

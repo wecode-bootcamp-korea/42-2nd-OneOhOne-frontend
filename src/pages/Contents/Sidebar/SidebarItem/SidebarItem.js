@@ -1,11 +1,25 @@
-import React from "react";
-import { IsCheckedIndividually } from "./IsCheckedIndividually/IsCheckedIndividually";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { IsCheckedIndividually } from "./IsCheckedIndividually/IsCheckedIndividually";
 import * as S from "./SidebarItem.styles";
 
-const SidebarItem = ({ curriculumId, video, chapterName, isChecked }) => {
+const SidebarItem = ({ lectureId, video, chapterName, isChecked }) => {
+  const [videoItem, setVideoItem] = useState([]);
+  const params = useParams();
+  // useEffect(() => {
+  // 전체 리스트 get
+  //   fetch(`http://10.58.52.60:8000/videos/list/${params.videoId}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json;charset=utf-8",
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => setVideoItem(data.data));
+  // }, [params.videoId]);
+
   return (
-    <S.ItemWrapper key={curriculumId}>
+    <S.ItemWrapper key={lectureId}>
       <S.ChapterWrapper>
         <S.ChapterName>{chapterName}</S.ChapterName>
       </S.ChapterWrapper>
@@ -15,7 +29,7 @@ const SidebarItem = ({ curriculumId, video, chapterName, isChecked }) => {
             key={list.videoId}
             {...list}
             isChecked={isChecked}
-            curriculumId={curriculumId}
+            params={params}
           />
         );
       })}

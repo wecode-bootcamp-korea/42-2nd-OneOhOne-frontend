@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./IsCheckedIndividually.styles";
 
-export const IsCheckedIndividually = ({
-  isChecked,
-  videoId,
-  name,
-  curriculumId,
-}) => {
+export const IsCheckedIndividually = ({ isChecked, videoId, name }) => {
   const [isClickedIndividually, setIsClickedIndividually] = useState(false);
   const handleToggle = () => {
     setIsClickedIndividually(prev => !prev);
@@ -14,10 +9,7 @@ export const IsCheckedIndividually = ({
 
   return (
     <S.IndividualItem>
-      <S.LectureWrapper
-        key={videoId}
-        to={`/contents/${curriculumId}/${videoId}`}
-      >
+      <S.LectureWrapper key={videoId} to={`/contents/${videoId}`}>
         <S.CheckIcon
           onClick={handleToggle}
           alt="v"
@@ -25,10 +17,7 @@ export const IsCheckedIndividually = ({
             isClickedIndividually || isChecked ? "solid" : "regular"
           }.png`}
         />
-        <S.LectureItem
-          onClick={handleToggle}
-          to={`/contents/${curriculumId}/${videoId}`}
-        >
+        <S.LectureItem onClick={handleToggle} to={`/contents/${videoId}`}>
           {name}
         </S.LectureItem>
       </S.LectureWrapper>
