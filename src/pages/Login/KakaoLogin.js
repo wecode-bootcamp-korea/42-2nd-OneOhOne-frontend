@@ -18,7 +18,6 @@ function KakaoLogin() {
       .then(data => {
         if (data.access_token) {
           postToken(data.access_token);
-          alert("토큰 발급 완료 ");
         } else {
           navigate("/");
         }
@@ -35,7 +34,6 @@ function KakaoLogin() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data.accessToken) {
           localStorage.setItem("token", data.access_token);
           navigate("/");
