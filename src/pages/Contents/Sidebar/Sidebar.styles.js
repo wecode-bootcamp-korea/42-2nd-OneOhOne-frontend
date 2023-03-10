@@ -3,17 +3,15 @@ import { flex } from "../../../styles/variables";
 
 export const SidebarContainer = styled.div`
   height: 100%;
-  max-width: 500px;
-  overflow: auto;
-  overflow-x: hidden;
+  width: ${({ isOpen }) => (isOpen ? "500px" : "50px")};
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
 `;
 export const SidebarMenuIcon = styled.div`
   ${flex};
   justify-content: space-between;
   height: 50px;
-  width: 100%;
   background-color: #efefef;
-  width: 100%;
 `;
 export const SidebarToggle = styled.img`
   width: 20px;
@@ -33,13 +31,11 @@ export const CloseButton = styled.img`
   }
 `;
 export const SidebarMenu = styled.ul`
-  width: ${({ isOpen }) => (isOpen ? "600px" : "50px")};
   background-color: white;
-  transition: all 0.3s ease-in-out;
-  height: 80vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px 0px 0px 40px;
+  padding-top: 20px;
 `;
 export const SidebarMenuIndex = styled.h1`
   font-size: 25px;
