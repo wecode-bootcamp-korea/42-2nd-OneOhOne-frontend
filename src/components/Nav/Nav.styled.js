@@ -40,42 +40,6 @@ export const NavInput = styled.input`
   background-repeat: no-repeat;
   background-size: 23px;
 `;
-export const DropdownList = styled.ul`
-  display: none;
-  position: absolute;
-  top: 110%;
-  right: -15%;
-  background-color: white;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  width: 250px;
-`;
-
-export const DropdownItem = styled.li`
-  padding: 8px 16px;
-  font-size: 17px;
-  line-height: 3;
-  color: #333;
-  cursor: pointer;
-  &:hover {
-    background-color: #f5f5f5;
-  }
-`;
-
-export const NavCategorySpan = styled.span`
-  font-weight: bold;
-  font-size: 18px;
-  margin: 0 18px;
-  position: relative;
-  display: inline-block;
-
-  &:hover ul {
-    display: block;
-  }
-`;
-
 export const NavRightDiv = styled.div`
   width: 160px;
   display: flex;
