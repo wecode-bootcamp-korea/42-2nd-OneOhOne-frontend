@@ -6,6 +6,7 @@ export const Page = styled.div`
 `;
 export const Main = styled.div`
   width: 80%;
+  margin-top: 120px;
 `;
 export const InfoContainer = styled.div`
   display: flex;

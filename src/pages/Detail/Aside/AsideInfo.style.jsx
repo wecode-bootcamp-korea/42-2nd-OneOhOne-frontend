@@ -13,7 +13,7 @@ export const StickyBox = styled.div`
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 60px;
+  top: 150px;
   border: 1px solid lightgray;
   box-shadow: -1px 1px 5px 0px lightgray;
   border-top: none;

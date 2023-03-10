@@ -4,7 +4,7 @@ export const MenuLayout = styled.div`
   position: sticky;
   display: flex;
   align-items: center;
-  top: 0px;
+  top: 90px;
   width: 100%;
   height: 50px;
   color: gray;
