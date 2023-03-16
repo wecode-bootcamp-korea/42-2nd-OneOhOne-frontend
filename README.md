@@ -17,7 +17,7 @@
 ## BackEnd
 
 - **Project** Manager - 이홍열 <a href="https://github.com/hongyeollee"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/hongyeollee"/></a>
-- 최원경 <a href="https://github.com/wkc28?tab=following"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/wkc28?tab=following"/></a>
+- 최원경 <a href="https://github.com/wkc28"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/wkc28"/></a>
 
 |                                             JavaScript                                             |                                                Nodejs                                                 |                                                 MySql                                                 |                                                  Rest                                                   |                                                 jest                                                 |
 | :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
