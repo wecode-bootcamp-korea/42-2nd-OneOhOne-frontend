@@ -18,10 +18,18 @@
 - **Product** Manager - 신혜린
 - 박준현, 이유진
 
+|                                             JavaScript                                             |                                               React.js                                                |                                                 Eslint                                                 |                                                 Prettier                                                 |                                                   Styled-components                                                    |
+| :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/eslint-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/prettier-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://miro.medium.com/v2/resize:fit:480/1*Iohnw2aOQ5EBghVoqKA7VA.png" alt="icon" width="55" height="55" /> |
+
 ## BackEnd
 
 - **Project** Manager - 이홍열
 - 최원경
+
+|                                             JavaScript                                             |                                                Nodejs                                                 |                                                 MySql                                                 |                                                  Rest                                                   |                                                 jest                                                 |
+| :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+| <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/jest-icon.svg" alt="icon" width="65" height="65" /> |
 
 ---
 
