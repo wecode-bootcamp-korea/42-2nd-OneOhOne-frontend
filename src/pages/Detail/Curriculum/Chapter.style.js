@@ -21,6 +21,11 @@ export const VideoName = styled.h3`
   align-items: center;
   font-size: 15px;
   margin: 10px 0px;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+  }
 `;
 export const VideoButton = styled.button`
   background-color: black;

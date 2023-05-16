@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import * as S from "./Chapter.style";
 
 export const Chapter = () => {
@@ -9,6 +10,13 @@ export const Chapter = () => {
       return { curriculumChapterName, curriculumId, videos };
     }
   );
+
+  const params = useParams();
+  // console.log(params);
+  const navigate = useNavigate();
+  const goToContents = params => {
+    navigate(`/contents/${Number(params)}`);
+  };
 
   useEffect(() => {
     fetch("/data/Detail/getDetail.json")
@@ -26,7 +34,10 @@ export const Chapter = () => {
                 {curriculumChapterName}
                 {videos.map(({ videoId, videoName }) => {
                   return (
-                    <S.VideoName key={videoId}>
+                    <S.VideoName
+                      key={videoId}
+                      onClick={() => goToContents(params)}
+                    >
                       {videoName}
                       <S.VideoButton>무료공개</S.VideoButton>
                     </S.VideoName>
