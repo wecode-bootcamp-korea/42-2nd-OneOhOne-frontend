@@ -51,10 +51,6 @@ function ClassBasicInfo() {
     setShowNewPrice(false);
   };
 
-  const handleShowNewPrice = () => {
-    setShowNewPrice(true);
-  };
-
   // const onSaveBtnClick = () => {
   //   const formData = new FormData();
   //   formData.append("lectureMainImageUrl", selectedCoverImg);
